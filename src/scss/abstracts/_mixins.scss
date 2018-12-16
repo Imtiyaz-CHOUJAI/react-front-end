@@ -1,0 +1,42 @@
+@mixin clearfix {
+    ::after {
+        content: '';
+        clear: both;
+        display: table;
+    }
+}
+
+@mixin absCenter() {
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
+
+// Media query manager
+
+/*
+    0-600px : Phone
+    600-900px : tablet portrait
+    900-1200px : tablet landscape
+    1200-1800px : normal desktop
+    1800px : large screens
+
+    1em = 16px
+*/
+
+@mixin respond($breakPoint) {
+    @if ($breakPoint == phone) {
+        @media (max-width: 37.5em) { @content };    // 600px 
+    }
+    @if ($breakPoint == tab-port) {
+        @media (max-width: 56.25em) { @content };   // 900px 
+    }
+    @if ($breakPoint == tab-land) {
+        @media (max-width: 75em) { @content };      // 1200px 
+    }
+    @if ($breakPoint == big-desktop) {
+        @media (min-width: 112.5em) { @content };   // 1800px 
+    }
+}

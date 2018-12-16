@@ -1,0 +1,17 @@
+.primary-heading {
+    font-size: 2rem;
+    padding: 2rem 0rem;
+}
+
+.secondary-heading {
+    font-size: 1.8rem;
+    padding: 2rem 0rem;    
+}
+
+.paragraph {
+    font-size: $default-size;
+    
+    &:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+}

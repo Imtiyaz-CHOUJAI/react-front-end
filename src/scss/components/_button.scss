@@ -1,0 +1,72 @@
+.btn {
+    &,
+    &:link,
+    &:visited {
+        text-decoration: none;
+        padding: 1rem 4rem;
+        display: inline-block;
+        border-radius: 3px;
+        transition: all .2s;
+        position: relative;
+        margin-bottom: .8rem;
+        width: 100%;
+        text-align: center;
+    }
+    &:hover {
+        transform: translateY(-.2rem);
+        box-shadow: 0 1rem 2rem rgba($black-color, .2);
+
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+    &:active {
+        transform: translateY(-.1rem);
+        box-shadow: 0 .5rem 2rem rgba($black-color, .2);
+    }
+    &-dark-blue {
+        background-color: $dark-blue;
+        color: $white-color;
+
+        &::after {
+            background-color: rgba($dark-blue, 0.8);
+        }
+    }
+
+    &-fb-blue {
+        background-color: $fb-blue;
+        color: $white-color;
+
+        &::after {
+            background-color: rgba($fb-blue, 0.8);
+        }
+    }
+
+    &-light-blue {
+        background-color: $light-blue;
+        color: $white-color;
+
+        &::after {
+            background-color: rgba($light-blue, 0.8);
+        }
+    }
+
+    &::after {
+        content: '';
+        display: inline-block;
+        // width: 100%;
+        // height: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
+
+    &-animated {
+        animation: inFromBottom .5s ease-out .75s;
+        animation-fill-mode: backwards;
+    }
+}

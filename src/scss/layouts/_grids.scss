@@ -1,0 +1,55 @@
+@include clearfix; 
+
+.row {
+    max-width: $grid-width;
+    margin: 0 auto;
+
+    &:not(:last-child) {
+        margin-bottom: $v-gutter;
+    }
+    
+    @include respond(tab-port) {
+        max-width: 50rem !important;
+    }
+}
+
+[class^='col-'] {
+    float: left;
+
+    &:not(:last-child) {
+        margin-right: $h-gutter;
+
+        @include respond(tab-port) {
+            margin-right: 0;
+            margin-bottom: 2rem;
+        }
+    }
+
+    @include respond(tab-port) {
+        width: 100% !important;
+    }
+}
+
+.col-1-of-2 {
+    width: calc((100% - #{$h-gutter}) / 2);
+}
+
+.col-1-of-3 {
+    width: calc((100% - 2*#{$h-gutter}) / 3);
+}
+
+.col-2-of-3 {
+    width: calc( 2* ((100% - 2*#{$h-gutter}) / 3) + #{$h-gutter});
+}
+
+.col-1-of-4 {
+    width: calc((100% - 3*#{$h-gutter}) / 4);
+}
+
+.col-2-of-4 {
+    width: calc( 2* ((100% - 3*#{$h-gutter}) / 4) + #{$h-gutter});
+}
+
+.col-3-of-4 {
+    width: calc( 3* ((100% - 3*#{$h-gutter}) / 4) + 2*#{$h-gutter});
+}

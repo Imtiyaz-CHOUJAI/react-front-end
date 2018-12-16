@@ -1,0 +1,25 @@
+.App {
+    position: relative;
+    width: 40%;
+    background: $white-color;
+    border-radius: 3px;
+    margin: 0 auto;
+    padding: 2rem 5rem;
+
+    @include respond(big-desktop) {
+        width: 30%;
+    }
+
+    @include respond(tab-port) {
+        width: 60%;
+    }
+    
+    @include respond(phone) {
+        width: 70%;
+    }
+
+    &__form {
+        width: 50%;
+        padding: 5rem;
+    }
+}
